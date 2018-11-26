@@ -11,59 +11,75 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <title>Gif Search</title>
   </head>
   <body>
-    <div class="container-fluid m-0 p-0">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark py-3">
-        <a class="navbar-brand ml-md-5 font-weight-bold" href="#">
-          Codey McDaniel
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbar"
-          aria-controls="navbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark py-3">
+      <a class="navbar-brand ml-md-5 font-weight-bold" href="#">
+        Codey McDaniel
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-controls="navbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <div class="collapse navbar-collapse mr-5" id="navbar">
-          <ul class="navbar-nav navbar-right ml-md-auto">
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://codeycsm.github.io/My-Portfolio/index.html"
-                >About</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://codeycsm.github.io/My-Portfolio/portfolio.html"
-                >Portfolio</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://codeycsm.github.io/My-Portfolio/contact.html"
-                >Contact</a
-              >
-            </li>
-          </ul>
+      <div class="collapse navbar-collapse mr-5" id="navbar">
+        <ul class="navbar-nav navbar-right ml-md-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://codeycsm.github.io/My-Portfolio/index.html"
+              >About</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://codeycsm.github.io/My-Portfolio/portfolio.html"
+              >Portfolio</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://codeycsm.github.io/My-Portfolio/contact.html"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Bootstrap container -->
+    <div class="container-fluid mx-0 p-0">
+      <div class="row mx-3 mt-3">
+        <div id="topics" class="col-md-8"></div>
+        <div class="col-md-4 my-2 text-center">
+          <input
+            id="input"
+            type="text"
+            class="mb-2 mx-auto border"
+            name="search"
+          />
+          <button id="submit" class="btn btn-primary d-block mx-auto">
+            Search
+          </button>
         </div>
-      </nav>
-      <!-- Html here -->
-
-      <!---->
-      <footer class="bg-dark text-light py-3 text-center fixed-bottom">
-        <p class="my-auto">&copy;Copyright</p>
-      </footer>
+      </div>
+      <div id="results" class="row mx-3 my-5"></div>
     </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-3 text-center">
+      <p class="my-auto">&copy;Copyright</p>
+    </footer>
   </body>
   <!-- ============ Bootstrap Js files =============== -->
   <script
@@ -81,4 +97,5 @@
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"
   ></script>
+  <script src="assets/js/javascript.js"></script>
 </html>
