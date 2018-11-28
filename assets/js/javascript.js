@@ -1,4 +1,12 @@
-let topics = ["cats", "kids", "dogs", "bears", "science", "technology"];
+let topics = [
+  "cats",
+  "kids",
+  "dogs",
+  "Popular",
+  "science",
+  "technology",
+  "LOL"
+];
 let topic = "";
 let gifQuantity = 10;
 let rating;
@@ -8,30 +16,21 @@ let gifArray = [];
 $(document).ready(function() {
   displayTopics();
 
-  // $("#submit").on("click", function() {
-  //   topic = $("#input").val();
-  //   topics.push(topic);
-  //   displayTopics();
-  //   gifSearch();
-  // });
-  // $(".topic").on("click", function() {
-  //   topic = $(this).text();
-  //   gifSearch();
-  // });
-
-  $("button").on("click", function() {
+  $("#buttonContainer").on("click", "button", function() {
     if ($(this).attr("id") === "submit") {
       topic = $("#input").val();
       topics.push(topic);
       displayTopics();
+      console.log("custom search");
     } else {
+      console.log("button clicked not search");
       topic = $(this).text();
     }
     rating = $("#rating").val();
-    console.log(rating);
     gifQuantity = parseInt($("#quantity").val());
     $("#input").val("");
     gifSearch(topic);
+    console.log(topic);
   });
 });
 
@@ -77,7 +76,7 @@ function gifSearch(topic) {
             gifArray[i].stillImage +
             "'/>" +
             "<div class='card-body p-0 bg-dark text-white'>" +
-            "<p class='card-text pt-2 pl-1'>Rating: " +
+            "<p class='card-text py-1 pl-1'>Rating: " +
             gifArray[i].rating.toUpperCase() +
             "</p>" +
             "</div>" +

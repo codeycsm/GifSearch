@@ -15,58 +15,58 @@
     <title>Gif Search</title>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark py-3">
-      <a class="navbar-brand ml-md-5 font-weight-bold" href="#">
-        Codey McDaniel
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbar"
-        aria-controls="navbar"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <div class="container-fluid p-0 d-flex flex-column">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark py-3">
+        <a class="navbar-brand ml-md-5 font-weight-bold" href="#">
+          Codey McDaniel
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar"
+          aria-controls="navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse mr-5" id="navbar">
-        <ul class="navbar-nav navbar-right ml-md-auto">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://codeycsm.github.io/My-Portfolio/index.html"
-              >About</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://codeycsm.github.io/My-Portfolio/portfolio.html"
-              >Portfolio</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="https://codeycsm.github.io/My-Portfolio/contact.html"
-              >Contact</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Bootstrap container -->
-    <div class="container mx-auto p-0">
-      <div class="row my-2">
-        <div class="col-md-3">
-          <p>Search Settings</p>
+        <div class="collapse navbar-collapse mr-5" id="navbar">
+          <ul class="navbar-nav navbar-right ml-md-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://codeycsm.github.io/My-Portfolio/index.html"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://codeycsm.github.io/My-Portfolio/portfolio.html"
+                >Portfolio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://codeycsm.github.io/My-Portfolio/contact.html"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Content -->
+      <h1 class="text-center">Gif Search</h1>
+      <div class="row mt-4 mx-0">
+        <div class="col-md-3 mx-auto">
           <input
             id="quantity"
             type="text"
-            class="form-control mb-2 mx-auto border"
+            class="form-control mb-2"
             placeholder="Quantity"
           />
           <select name="rating" id="rating" class="form-control mb-2">
@@ -75,29 +75,32 @@
             <option value="pg-13">PG-13</option>
           </select>
         </div>
-        <div class="col-md-8 mx-auto">
-          <div class="d-flex flex-row align-self-center">
-            <input
-              id="input"
-              type="text"
-              class="form-control mb-2 mx-auto border"
-              name="search"
-              placeholder="Search Gif's"
-            />
-            <button id="submit" class="btn btn-primary mx-auto">Search</button>
+        <!-- Search bar and search buttons -->
+        <div class="col-md-9">
+          <div id="buttonContainer" class="row d-flex flex-column">
+            <div class="mx-auto d-flex flex-row">
+              <input
+                id="input"
+                type="text"
+                class="form-control mb-2 border"
+                name="search"
+                placeholder="Custom Search"
+              />
+              <button id="submit" class="btn btn-primary">Search</button>
+            </div>
+            <div id="topics" class="mx-auto"></div>
           </div>
-
-          <!-- <p class="text-center mt-3">OR</p> -->
-          <div id="topics" class="row mx-auto"></div>
         </div>
       </div>
-
-      <div id="results" class="row mx-auto my-5"></div>
+      <!-- Container to display Gif's -->
+      <div id="resultsContainer" class="row">
+        <div id="results" class="row my-5 mx-5"></div>
+      </div>
+      <!-- Footer -->
+      <footer class="bg-dark text-light py-3 text-center">
+        <p class="my-auto">&copy;Copyright</p>
+      </footer>
     </div>
-    <!-- Footer -->
-    <footer class="bg-dark text-light py-3 text-center">
-      <p class="my-auto">&copy;Copyright</p>
-    </footer>
   </body>
   <!-- ============ Bootstrap Js files =============== -->
   <script

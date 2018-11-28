@@ -3,18 +3,21 @@ body {
   height: 100%;
   width: 100%;
 }
-.container {
-  min-height: calc(100% - 150px);
-}
 
 .btn-outline-info,
 #input,
 #submit {
   height: 40px;
 }
-.card {
+#input {
+  width: 80%;
+}
+#topics .card {
   height: 250px;
   width: 150px;
+}
+#results {
+  min-width: calc(100% - 130px);
 }
 img {
   min-height: 200px;
