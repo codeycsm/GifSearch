@@ -59,22 +59,41 @@
       </div>
     </nav>
     <!-- Bootstrap container -->
-    <div class="container-fluid mx-0 p-0">
-      <div class="row mx-3 mt-3">
-        <div id="topics" class="col-md-8"></div>
-        <div class="col-md-4 my-2 text-center">
+    <div class="container mx-auto p-0">
+      <div class="row my-2">
+        <div class="col-md-3">
+          <p>Search Settings</p>
           <input
-            id="input"
+            id="quantity"
             type="text"
-            class="mb-2 mx-auto border"
-            name="search"
+            class="form-control mb-2 mx-auto border"
+            placeholder="Quantity"
           />
-          <button id="submit" class="btn btn-primary d-block mx-auto">
-            Search
-          </button>
+          <select name="rating" id="rating" class="form-control mb-2">
+            <option value="g">G</option>
+            <option value="pg">PG</option>
+            <option value="pg-13">PG-13</option>
+            <option value="r">R</option>
+          </select>
+        </div>
+        <div class="col-md-8 mx-auto">
+          <div class="d-flex flex-row align-self-center">
+            <input
+              id="input"
+              type="text"
+              class="form-control mb-2 mx-auto border"
+              name="search"
+              placeholder="Search Gif's"
+            />
+            <button id="submit" class="btn btn-primary mx-auto">Search</button>
+          </div>
+
+          <!-- <p class="text-center mt-3">OR</p> -->
+          <div id="topics" class="row mx-auto"></div>
         </div>
       </div>
-      <div id="results" class="row mx-3 my-5"></div>
+
+      <div id="results" class="row mx-auto my-5"></div>
     </div>
     <!-- Footer -->
     <footer class="bg-dark text-light py-3 text-center">

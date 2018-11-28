@@ -3,9 +3,22 @@ body {
   height: 100%;
   width: 100%;
 }
-.container-fluid {
-  min-height: calc(100% - 130px);
+.container {
+  min-height: calc(100% - 150px);
 }
-input {
-  width: 85%;
+
+.btn-outline-info,
+#input,
+#submit {
+  height: 40px;
+}
+.card {
+  height: 250px;
+  width: 150px;
+}
+img {
+  min-height: 200px;
+  min-width: 148px;
+  max-height: 200px;
+  max-width: 150px;
 }

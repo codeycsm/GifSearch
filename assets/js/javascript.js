@@ -1,37 +1,39 @@
+let topics = ["cats", "kids", "dogs", "bears", "science", "technology"];
+let topic = "";
+let gifQuantity = 10;
+let rating;
+let gifApi;
+let gifArray = [];
+
 $(document).ready(function() {
   displayTopics();
 
-  $("#submit").on("click", function() {
-    gifArray = [];
-    topic = $("#input").val();
-    topics.push(topic);
-    displayTopics();
-    gifSearch();
-  });
-  $(".topic").on("click", function() {
-    gifArray = [];
-    topic = $(this).text();
-    gifSearch();
-  });
-
-  // $("button").on("click", function() {
-  //   gifArray = [];
-  //   if ($(this).attr("id") === "submit") {
-  //     topic = $("#input").val();
-  //     topics.push(topic);
-  //     displayTopics();
-  //     gifSearch(topic);
-  //   } else {
-  //     topic = $(this).text();
-  //     gifSearch();
-  //   }
+  // $("#submit").on("click", function() {
+  //   topic = $("#input").val();
+  //   topics.push(topic);
+  //   displayTopics();
+  //   gifSearch();
   // });
-});
+  // $(".topic").on("click", function() {
+  //   topic = $(this).text();
+  //   gifSearch();
+  // });
 
-let topics = ["cats", "kids", "dogs", "bears", "science", "technology"];
-let topic = "";
-let gifApi;
-let gifArray = [];
+  $("button").on("click", function() {
+    if ($(this).attr("id") === "submit") {
+      topic = $("#input").val();
+      topics.push(topic);
+      displayTopics();
+    } else {
+      topic = $(this).text();
+    }
+    rating = $("#rating").val();
+    console.log(rating);
+    gifQuantity = parseInt($("#quantity").val());
+    $("#input").val("");
+    gifSearch(topic);
+  });
+});
 
 function displayTopics() {
   $("#topics").empty();
@@ -44,12 +46,16 @@ function displayTopics() {
   }
 }
 
-function gifSearch() {
+function gifSearch(topic) {
+  gifArray = [];
   $("#results").empty();
   gifApi = $.get(
     "https://api.giphy.com/v1/gifs/search?q=" +
       topic +
-      "&api_key=UhZuFiLPyyuHkohtSQksy7fnPCmN6Fdb&limit=10"
+      "&api_key=UhZuFiLPyyuHkohtSQksy7fnPCmN6Fdb&limit=" +
+      gifQuantity +
+      "&rating=" +
+      rating
   );
   gifApi.done(function(data, status) {
     if (!status) {
@@ -61,16 +67,25 @@ function gifSearch() {
       // console.log("Status: ", status);
       for (let i = 0; i <= data.data.length - 1; i++) {
         gifArray.push({
-          stillImage: data.data[i].images.fixed_width_small_still.url,
-          gif: data.data[i].images.fixed_width_small.url
+          stillImage: data.data[i].images.original_still.url,
+          gif: data.data[i].images.original.url,
+          rating: data.data[i].rating
         });
         $("#results").append(
-          "<img class='img-responsive mx-2 my-2' src='" +
+          "<div class='card mx-2 mb-2'>" +
+            "<img class='card-img-top' src='" +
             gifArray[i].stillImage +
-            "'/>"
+            "'/>" +
+            "<div class='card-body p-0 bg-dark text-white'>" +
+            "<p class='card-text pt-2 pl-1'>Rating: " +
+            gifArray[i].rating.toUpperCase() +
+            "</p>" +
+            "</div>" +
+            "</div>"
         );
       }
     }
+    console.log(gifArray);
     playGif();
   });
 }
