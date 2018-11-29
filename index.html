@@ -15,7 +15,6 @@
     <title>Gif Search</title>
   </head>
   <body>
-    <div class="container-fluid p-0 d-flex flex-column">
       <!-- Navigation -->
       <nav class="navbar navbar-expand-md navbar-dark bg-dark py-3">
         <a class="navbar-brand ml-md-5 font-weight-bold" href="#">
@@ -59,10 +58,11 @@
           </ul>
         </div>
       </nav>
+      <div class="container p-0 m-0"></div>
       <!-- Content -->
-      <h1 class="text-center">Gif Search</h1>
-      <div class="row mt-4 mx-0">
-        <div class="col-md-3 mx-auto">
+      <h1 class="text-center my-3">Gif Search</h1>
+      <div class="row">
+        <div class="col-md-5 d-flex flex-row mx-auto my-3">
           <input
             id="quantity"
             type="text"
@@ -70,37 +70,40 @@
             placeholder="Quantity"
           />
           <select name="rating" id="rating" class="form-control mb-2">
-            <option value="g">G</option>
-            <option value="pg">PG</option>
-            <option value="pg-13">PG-13</option>
+            <option value="g">Up to Rating: G</option>
+            <option value="pg">Up to Rating: PG</option>
+            <option value="pg-13">Up to Rating: PG-13</option>
           </select>
         </div>
-        <!-- Search bar and search buttons -->
-        <div class="col-md-9">
-          <div id="buttonContainer" class="row d-flex flex-column">
-            <div class="mx-auto d-flex flex-row">
-              <input
-                id="input"
-                type="text"
-                class="form-control mb-2 border"
-                name="search"
-                placeholder="Custom Search"
-              />
-              <button id="submit" class="btn btn-primary">Search</button>
-            </div>
-            <div id="topics" class="mx-auto"></div>
+      </div>
+      <!-- Search bar and search buttons -->
+      <div class="row">
+        <div id="buttonContainer" class="col-md-7 mx-auto">
+          <div class="col-md-10 d-flex flex-row mx-auto">
+            <input
+              id="input"
+              type="text"
+              class="form-control mb-1 border"
+              name="search"
+              placeholder="Custom Search"
+            />
+            <button id="submit" class="btn btn-primary">Find</button>
           </div>
+          <p class="text-center m-0">OR</p>
+          <div id="topics" class="row px-3 justify-content-center"></div>
         </div>
       </div>
+
       <!-- Container to display Gif's -->
-      <div id="resultsContainer" class="row">
-        <div id="results" class="row my-5 mx-5"></div>
+      <div id="resultsContainer" class="row mx-2">
+        <div id="results" class="row my-5 mx-2"></div>
       </div>
-      <!-- Footer -->
-      <footer class="bg-dark text-light py-3 text-center">
+      
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-3 text-center">
         <p class="my-auto">&copy;Copyright</p>
       </footer>
-    </div>
   </body>
   <!-- ============ Bootstrap Js files =============== -->
   <script

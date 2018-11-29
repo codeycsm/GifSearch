@@ -1,12 +1,4 @@
-let topics = [
-  "cats",
-  "kids",
-  "dogs",
-  "Popular",
-  "science",
-  "technology",
-  "LOL"
-];
+let topics = ["cats", "dogs", "popular", "science", "technology", "lol"];
 let topic = "";
 let gifQuantity = 10;
 let rating;
@@ -71,7 +63,7 @@ function gifSearch(topic) {
           rating: data.data[i].rating
         });
         $("#results").append(
-          "<div class='card mx-2 mb-2'>" +
+          "<div class='card mx-auto mb-2'>" +
             "<img class='card-img-top' src='" +
             gifArray[i].stillImage +
             "'/>" +
