@@ -61,7 +61,7 @@ function gifSearch(topic) {
           rating: data.data[i].rating
         });
         $("#results").append(
-          "<div class='card mx-auto mb-2'>" +
+          "<div class='card mx-auto mb-3'>" +
             "<img class='card-img-top' src='" +
             gifArray[i].stillImage +
             "'/>" +
