@@ -1,4 +1,4 @@
-let topics = ["cats", "dogs", "popular", "science", "technology", "lol"];
+let topics = ["popular", "fails", "trending", "science", "technology", "lol"];
 let topic = "";
 let gifQuantity = 10;
 let rating;
@@ -13,16 +13,13 @@ $(document).ready(function() {
       topic = $("#input").val();
       topics.push(topic);
       displayTopics();
-      console.log("custom search");
     } else {
-      console.log("button clicked not search");
       topic = $(this).text();
     }
     rating = $("#rating").val();
     gifQuantity = parseInt($("#quantity").val());
     $("#input").val("");
     gifSearch(topic);
-    console.log(topic);
   });
 });
 
@@ -60,6 +57,7 @@ function gifSearch(topic) {
         gifArray.push({
           stillImage: data.data[i].images.original_still.url,
           gif: data.data[i].images.original.url,
+          title: data.data[i].title,
           rating: data.data[i].rating
         });
         $("#results").append(
@@ -68,16 +66,21 @@ function gifSearch(topic) {
             gifArray[i].stillImage +
             "'/>" +
             "<div class='card-body p-0 bg-dark text-white'>" +
-            "<p class='card-text py-1 pl-1'>Rating: " +
+            "<p class='card-text py-2 pl-1'>Rating: " +
             gifArray[i].rating.toUpperCase() +
+            "<a href='" +
+            gifArray[i].gif +
+            "' download target='_blank'>" +
+            "<i class='fas fa-download float-right mr-2 mt-1 text-white'></i>" +
+            "</a>" +
             "</p>" +
             "</div>" +
             "</div>"
         );
       }
     }
-    console.log(gifArray);
     playGif();
+    downloadGif();
   });
 }
 
@@ -92,3 +95,30 @@ function playGif() {
     }
   });
 }
+
+// function downloadGif() {
+//   $("i").on("click", function() {
+//     for (let i = 0; i < gifArray.length; i++) {
+//       if (
+//         $(this)
+//           .parents(".card")
+//           .children()
+//           .attr("src") === gifArray[i].stillImage ||
+//         $(this)
+//           .parents(".card")
+//           .children()
+//           .attr("src") === gifArray[i].gif
+//       ) {
+//         console.log("index: " + i);
+//         window.open(gifArray[i].gif, "_blank");
+//       }
+//     }
+//   });
+
+//   console.log(
+//     $(this)
+//       .parents(".card")
+//       .children()
+//       .attr("src")
+//   );
+// }

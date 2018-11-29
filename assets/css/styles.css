@@ -2,6 +2,14 @@ html,
 body {
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
+}
+#h1 {
+  font-family: "Nothing You Could Do", cursive;
+}
+#h1-2 {
+  font-weight: 200;
+  margin-left: 10px;
 }
 #resultsContainer {
   min-height: calc(100% - 410px);
@@ -13,14 +21,21 @@ body {
   height: 40px;
 }
 
-.card {
-  height: 250px;
-  width: 150px;
+.btn-outline-info {
+  font-family: "Rock Salt", cursive;
 }
 
+.card {
+  height: 250px;
+  width: 180px;
+}
+p {
+  font-family: "Nothing You Could Do", cursive;
+  font-weight: bold;
+}
 img {
   min-height: 200px;
-  min-width: 148px;
+  min-width: 178px;
   max-height: 200px;
-  max-width: 150px;
+  max-width: 178px;
 }
