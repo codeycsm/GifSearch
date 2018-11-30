@@ -110,7 +110,7 @@ function downloadGif() {
           .children()
           .attr("src") === gifArray[i].gif
       ) {
-        saveAs(gifArray[i].gif, gifArray[i].title);
+        saveAs(gifArray[i].gif, "gif_download.gif");
       }
     }
   });
