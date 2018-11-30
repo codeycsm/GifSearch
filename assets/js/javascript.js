@@ -51,7 +51,7 @@ function gifSearch(topic) {
         "<h1>There was a problem connecting to the server</h1>"
       );
     } else {
-      //console.log("Data Object:", data);
+      console.log("Data Object:", data);
       // console.log("Status: ", status);
       for (let i = 0; i <= data.data.length - 1; i++) {
         gifArray.push({
@@ -68,17 +68,18 @@ function gifSearch(topic) {
             "<div class='card-body p-0 bg-dark text-white'>" +
             "<p class='card-text py-2 pl-1'>Rating: " +
             gifArray[i].rating.toUpperCase() +
-            "<a href='" +
-            gifArray[i].gif +
-            "' download target='_blank'>" +
+            //"<a href='" +
+            //gifArray[i].gif +
+            //"' download>" +
             "<i class='fas fa-download float-right mr-2 mt-1 text-white'></i>" +
-            "</a>" +
+            //"</a>" +
             "</p>" +
             "</div>" +
             "</div>"
         );
       }
     }
+    console.log(gifArray);
     playGif();
     downloadGif();
   });
@@ -96,29 +97,21 @@ function playGif() {
   });
 }
 
-// function downloadGif() {
-//   $("i").on("click", function() {
-//     for (let i = 0; i < gifArray.length; i++) {
-//       if (
-//         $(this)
-//           .parents(".card")
-//           .children()
-//           .attr("src") === gifArray[i].stillImage ||
-//         $(this)
-//           .parents(".card")
-//           .children()
-//           .attr("src") === gifArray[i].gif
-//       ) {
-//         console.log("index: " + i);
-//         window.open(gifArray[i].gif, "_blank");
-//       }
-//     }
-//   });
-
-//   console.log(
-//     $(this)
-//       .parents(".card")
-//       .children()
-//       .attr("src")
-//   );
-// }
+function downloadGif() {
+  $("i").on("click", function() {
+    for (let i = 0; i < gifArray.length; i++) {
+      if (
+        $(this)
+          .parents(".card")
+          .children()
+          .attr("src") === gifArray[i].stillImage ||
+        $(this)
+          .parents(".card")
+          .children()
+          .attr("src") === gifArray[i].gif
+      ) {
+        saveAs(gifArray[i].gif, gifArray[i].title);
+      }
+    }
+  });
+}
