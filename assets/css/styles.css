@@ -3,6 +3,12 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+  background-color: #f4f3ea;
+}
+/* ================ Navbar & Footer styles ============== */
+nav,
+footer {
+  background-color: #333d51;
 }
 #h1 {
   font-family: "Nothing You Could Do", cursive;
@@ -16,9 +22,9 @@ body {
 }
 
 .btn-outline-info,
-#input,
-#submit {
+#input {
   height: 40px;
+  background-color: #fff;
 }
 
 .btn-outline-info {
@@ -33,7 +39,7 @@ p {
   font-family: "Nothing You Could Do", cursive;
   font-weight: bold;
 }
-img {
+.card img {
   min-height: 200px;
   min-width: 178px;
   max-height: 200px;
