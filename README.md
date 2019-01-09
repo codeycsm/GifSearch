@@ -1,6 +1,14 @@
 # Gif Search
 
-- Search for Gif from Giphy.
-- Download Gif's you want.
-- 25 Gif's by default but option to add more.
-- Get Gif's rated up to pg-13.
+### Rundown
+
+Search for GIF's using the Giphy API. There are 6 button presets to chose from or a custom search, Select a rating, and Quantity you want. Save Gif's if you want as well.
+
+### Technologies Used
+
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+
+# [Play](https://codeycsm.github.io/GifSearch/)
