@@ -45,3 +45,6 @@ p {
   max-height: 200px;
   max-width: 178px;
 }
+#email {
+  font-family: "Times New Roman", Times, serif;
+}
